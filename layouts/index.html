@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .tags {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .tags-item {
+            background: blue;
+            color: #fff;
+            margin-right: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .parent {
+            resize: both;
+            overflow: auto;
+            min-height: 200px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 11px 6px #1862ea45;
+            border-radius: 10px;
+            background: blue;
+        }
+
+        .example-1 {
+            display: grid;
+            width: 100%;
+            place-items: center;
+        }
+
+        .example-1 .child {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .example-2 {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .example-2 .child {
+            flex: 0 1 150px;
+            display: grid;
+            place-items: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .example-2-2 .child {
+            flex: 1 1 150px;
+        }
+
+        .example-3 {
+            display: grid;
+            grid-template-columns: minmax(150px, 25%) 1fr;
+            width: 100%;
+        }
+
+        .example-3 .child {
+            display: grid;
+            place-items: center;
+        }
+
+        .example-3 :first-of-type {
+            background: red;
+        }
+
+        .example-4 {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .example-4 .child {
+            padding: 10px;
+            background: #fff;
+        }
+
+        .example-4 .child:nth-child(1) {
+            background: red;
+        }
+
+        .example-4 .child:nth-child(2) {
+            background: white;
+        }
+
+        .example-4 .child:nth-child(2) {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<h2>1. Center element</h2>
+<div class="tags">
+    <div class="tags-item">diplay: grid</div>
+    <div class="tags-item">place-items: center</div>
+</div>
+<div class="example-1 parent">
+    <div class="child" contenteditable="">Center</div>
+</div>
+
+<h2>2. Deconstructive</h2>
+<div class="tags">
+    <div class="tags-item">flex: 0 1 150px</div>
+</div>
+<div class="example-2 parent">
+    <div class="child">One</div>
+    <div class="child">Two</div>
+    <div class="child">Three</div>
+</div>
+<div class="tags">
+    <div class="tags-item">flex: 1 1 150px</div>
+</div>
+<div class="example-2 example-2-2 parent">
+    <div class="child">One</div>
+    <div class="child">Two</div>
+    <div class="child">Three</div>
+</div>
+
+<h2>3. Sidebar</h2>
+<div class="tags">
+    <div class="tags-item">display: grid</div>
+    <div class="tags-item">grid-template-columns: minmax(150px, 25%) 1fr</div>
+</div>
+<div class="example-3 parent">
+    <div class="child">Sidebar</div>
+    <div class="child">Content</div>
+</div>
+
+<h2>4. Short layout</h2>
+<div class="tags">
+    <div class="tags-item"> grid-template-rows: auto 1fr auto</div>
+</div>
+<div class="example-4 parent">
+    <div class="child">Header</div>
+    <div class="child">Content</div>
+    <div class="child">Footer</div>
+</div>
+</body>
+</html>
